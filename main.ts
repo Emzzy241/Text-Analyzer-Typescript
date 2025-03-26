@@ -1,15 +1,15 @@
+function wordCounter(text: string): number{
+    if (text.trim().length === 0) return 0;
 
-function noOfWords(wordInput: string): number{
-    wordInput = wordInput.trim();
-
-    let arr = wordInput.split(" ");
+    let arr = text.split(" ");
     let counter: number = 0;
-    arr.forEach(element => {
-        if (element !== "") counter++;
+    arr.forEach( element => {
+        if(typeof element === 'string' && isNaN(Number(element))) counter++;
     });
+
     return counter;
 }
 
-let actualNoOfWords = noOfWords("hello there");
+let wordCount = wordCounter(" Hello There 123");
 
-console.log(actualNoOfWords);
+console.log(wordCount);
