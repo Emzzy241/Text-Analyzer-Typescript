@@ -10,6 +10,11 @@ function wordCounter(text: string): number{
     return counter;
 }
 
-let wordCount = wordCounter(" Hello There 123");
+function checkingSentence(sentence: string): string{
+    sentence = sentence.toLowerCase();
+    sentence = sentence.replace(/[^a-zA-Z0-9\s]/g, "");
+    return sentence;
+}
+let testCheckSentence = checkingSentence("Hello There 123Ade412 423 {}# # # () \ ] \ / /** {} [] () 9027")
 
-console.log(wordCount);
+console.log(testCheckSentence);
